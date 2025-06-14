@@ -1,0 +1,19 @@
+<p>todo-list works!</p>
+<div>
+  <input type="text" placeholder="Enter New Task" [(ngModel)]="task"> 
+  <button (click)="addTask()">Add Task</button> 
+
+<div class="task-list-container">
+  <ul class="task-list"> 
+    @for (item of taskList; track item.id) { 
+      <li>
+        <span>{{ item.id }}.</span> 
+        <span>{{ item.task }}</span> 
+        <button (click)="deleteTask(item.id)">Delete</button> 
+      </li>
+    }
+    @empty {
+      <p>No tasks available.</p>
+    }
+  </ul>
+</div>
