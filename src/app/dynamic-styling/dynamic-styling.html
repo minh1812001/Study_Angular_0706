@@ -1,0 +1,19 @@
+<p>dynamic-styling works!</p>
+<div>
+  <!-- Ví dụ 1: Định kiểu động đơn giản -->
+  <!-- Màu nền và cỡ chữ được lấy từ các thuộc tính trong file TypeScript -->
+  <h1 [style.background-color]="bgColor" [style.font-size]="fontSizePx + 'px'">
+    Heading với Định kiểu Động
+  </h1>
+
+  <hr> <!-- Dòng phân cách để dễ nhìn -->
+
+  <!-- Ví dụ 2: Định kiểu động có điều kiện -->
+  <!-- Cỡ chữ thay đổi dựa trên giá trị của isZoomed -->
+  <h1 [style.font-size]="isZoomed ? bigSizePx : smallSizePx">
+    Heading với Định kiểu Động có Điều kiện
+  </h1>
+
+  <!-- Nút để gọi hàm toggleSize() khi được nhấp -->
+  <button (click)="toggleSize()">Chuyển đổi Cỡ chữ</button>
+</div>

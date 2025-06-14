@@ -1,0 +1,24 @@
+<p>directive-for works!</p>
+<div>
+  <h2>Danh sách Người dùng (Mảng chuỗi đơn giản)</h2>
+  <ul>
+    <li *ngFor="let user of users; let i = index; trackBy: trackByUser">
+      {{ i + 1 }}. {{ user }}
+    </li>
+  </ul>
+</div>
+
+<hr />
+
+<div>
+  <h2>Danh sách Sinh viên (Mảng đối tượng)</h2>
+  <ul>
+
+    <li *ngFor="let student of studentsData; trackBy: trackByStudentId">
+      <!-- Truy cập các thuộc tính của đối tượng 'student' [1] -->
+      Tên: {{ student.name }}, Tuổi: {{ student.age }}, Email: {{ student.email }}
+      <!-- Thêm nút để xử lý sự kiện, truyền dữ liệu của sinh viên hiện tại [1] -->
+      <button (click)="getStudentDetails(student.name, student.id)">Xem chi tiết</button>
+    </li>
+  </ul>
+</div>
