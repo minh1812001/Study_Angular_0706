@@ -1,0 +1,27 @@
+<h1>switch works!</h1>
+
+@if (users.length > 0) {
+  @for (user of users; track user) {
+    <h3>This is our {{ $index + 1 }} user and name is {{ user }}</h3>
+  } @empty {
+    <h3>No elements available in array</h3>
+  }
+
+  @for (user of users; track user) {
+    <h4 [style.background-color]="$first || $last ? 'red' : 'transparent'">
+      {{ user }}
+    </h4>
+  } @empty {
+    <h3>No elements available in array</h3>
+  }
+
+  @for (user of users; track user) {
+    <h3 [style.background-color]="$odd ? '#aaa' : '#777'">
+      {{ user }}
+    </h3>
+  } @empty {
+    <h3>No elements available in array</h3>
+  }
+} @else {
+  <h3>No users found</h3>
+}

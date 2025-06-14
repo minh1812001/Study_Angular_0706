@@ -1,0 +1,29 @@
+<h1>imputfield works!</h1>
+<h3>Demo Lấy và Đặt Giá Trị Trường Nhập</h3>
+
+<h2>Cách 1: Sử dụng Sự Kiện (Input Event)</h2>
+<input type="text" placeholder="Nhập tên người dùng" (input)="getName($event)">
+<!-- Nút này sẽ hiển thị tên đã nhập. Giá trị được cập nhật thông qua sự kiện (input) ở trên. -->
+<button (click)="showUserName()">Hiện Tên Đã Nhập</button> 
+<br><br>
+<!-- Nút này sẽ đặt giá trị cho thuộc tính userName trong TS, và h1 sẽ hiển thị giá trị đó. -->
+<button (click)="setDefaultName()">Đặt Tên Mặc Định (Chỉ trên biến TS)</button>
+
+<!-- Hiển thị tên người dùng đã nhập / đặt -->
+@if (displayUserName) {
+  <h1>Tên người dùng: {{ userName }}</h1>
+}
+
+<h2>Cách 2: Sử dụng Biến Tham Chiếu Template (#templateVar)</h2>
+<input type="text" placeholder="Nhập email" #emailInputField>
+<br><br>
+<!-- Lấy giá trị của trường nhập bằng cách truyền trực tiếp emailInputField.value -->
+<button (click)="getEmail(emailInputField.value)">Lấy Email từ Trường Nhập</button>
+<br><br>
+<!-- Đặt giá trị cho trường nhập trực tiếp bằng cách truyền emailInputField object -->
+<button (click)="setEmail(emailInputField)">Đặt Email Mặc Định vào Trường Nhập</button>
+
+<!-- Hiển thị email đã nhập / đặt -->
+@if (displayUserEmail) {
+  <h1>Email: {{ userEmail }}</h1>
+}

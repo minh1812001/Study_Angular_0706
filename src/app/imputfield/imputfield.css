@@ -1,0 +1,29 @@
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+input {
+  margin: 5px;
+  padding: 8px;
+  width: 250px;
+}
+
+h1 {
+  color: #333;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+h2 {
+  color: #0056b3;
+  font-size: 22px;
+  margin-bottom: 15px;
+}

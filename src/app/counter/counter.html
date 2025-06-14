@@ -1,0 +1,43 @@
+<h1>counter works!</h1>
+<hr>
+
+<div>
+  <h2>Sự kiện Click</h2>
+  <button (click)="handleEvent($event)">Nhấn vào đây</button>
+</div>
+
+<hr>
+
+<div>
+  <h2>Sự kiện Chuột (Mouse Events)</h2>
+  <div style="width: 200px; height: 100px; background-color: lightblue; margin-bottom: 10px; padding: 10px; border: 1px solid #007bff;"
+       (mouseenter)="handleEvent($event)">
+    Di chuột vào đây (Mouse Enter)
+  </div>
+  <div style="width: 200px; height: 100px; background-color: lightcoral; padding: 10px; border: 1px solid #dc3545;"
+       (mouseleave)="handleEvent($event)">
+    Di chuột ra ngoài (Mouse Leave)
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <h2>Sự kiện Trường Nhập (Input Field Events)</h2>
+  <input type="text" placeholder="Gõ gì đó..."
+         (input)="handleEvent($event)"
+         (focus)="handleEvent($event)"
+         (blur)="handleEvent($event)">
+</div>
+
+<hr>
+
+<div>
+  <h2>Chi tiết Sự kiện Cuối cùng:</h2>
+  <p><strong>Loại Sự kiện:</strong> {{ lastEventType }}</p>
+@if (lastInputValue) {
+  <p><strong>Giá trị Nhập:</strong> {{ lastInputValue }}</p>
+} @else {
+  <p>Không có giá trị được nhập.</p>
+}
+</div>
