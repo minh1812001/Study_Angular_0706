@@ -1,5 +1,5 @@
 import { Component, Directive } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Switch } from './switch/switch';
 import { Imputfield } from './imputfield/imputfield';
 import { Counter } from "./counter/counter";
@@ -11,7 +11,7 @@ import { DirectiveFor } from './directive-for/directive-for';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule ,Switch, Imputfield, Counter, TwoWayBinding, TodoList, DynamicStyling, DirectiveFor],
+  imports: [FormsModule ,Switch, Imputfield, Counter, TwoWayBinding, TodoList, DynamicStyling, DirectiveFor, RouterLink, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
