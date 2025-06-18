@@ -20,3 +20,21 @@
     </li>    
 </ul>
 <router-outlet/>
+
+<h2>Danh sách người dùng</h2>
+<ul>
+    @for(user of users ;track user.id){
+        <li>
+                    <a [routerLink]="['/dynamic-routes', user.id, user.name]">
+      {{ user.name }} (ID: {{ user.id }}) - Xem Profile
+    </a>
+</li>
+    }
+</ul>
+
+
+<!-- router-outlet là nơi các component được định tuyến sẽ hiển thị -->
+ <router-outlet></router-outlet> 
+<a [routerLink]="['/profile',{name:'minhlh29'}]" >Go to profile page</a>
+
+<a [routerLink]="['/dynamic-routes']" >Go to profile page</a>
